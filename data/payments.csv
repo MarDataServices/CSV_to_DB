@@ -1,0 +1,6 @@
+id,order_id,amount,payment_date,status
+1,1,71.97,2024-03-10,Successful
+2,2,89.99,2024-03-11,Pending
+3,3,179.98,2024-03-12,Successful
+4,4,0.00,2024-03-13,Failed
+5,5,25.99,2024-03-14,Successful

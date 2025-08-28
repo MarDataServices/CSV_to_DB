@@ -1,0 +1,6 @@
+id,email,phone,created_at
+1,john.doe@example.com,+46700011122,2024-01-10
+2,jane.smith@example.com,+46700011133,2024-02-15
+3,maria.garcia@example.com,+46700011144,2024-02-20
+4,ali.khan@example.com,+46700011155,2024-03-01
+5,sofia.lee@example.com,+46700011166,2024-03-05
