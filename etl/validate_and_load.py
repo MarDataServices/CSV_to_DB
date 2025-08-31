@@ -14,8 +14,6 @@ def transform_data(data_dir, con, cur):
             
             table_name = file.split('.')[0]
             
-
-            
             with open(path, 'r') as f:
                 reader = csv.reader(f)
                 headers = next(reader)
@@ -30,8 +28,12 @@ def transform_data(data_dir, con, cur):
                 cur.execute(drop_all)
                 cur.execute(create_tbl)
                 
-                
-                
+                cur.execute(sql.SQL(
+                    "ALTER TABLE {} ADD CONSTRAINT {} PRIMARY KEY (id)").format(
+                    sql.Identifier(table_name),
+                    sql.Identifier(f"{table_name}_pk")
+                ))
+
                 cur.copy_expert(sql.SQL("COPY {} from STDIN WITH CSV HEADER").format(sql.Identifier(file.split('.')[0])), f)
 
     con.commit()
